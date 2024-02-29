@@ -2,11 +2,6 @@ package com.example.projectm.data.models
 
 import com.google.gson.annotations.SerializedName
 
-data class GetBuildingDataResponse(
-
-	@field:SerializedName("GetBuildingDataResponse")
-	val getBuildingDataResponse: List<GetBuildingDataResponseItem?>? = null
-)
 
 data class GetBuildingDataResponseItem(
 

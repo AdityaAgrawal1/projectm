@@ -1,9 +1,9 @@
 package com.example.projectm.repository
 
-import com.example.neko.utils.resource.Resource
+import com.example.projectm.utils.resource.Resource
 import com.example.projectm.BaseRepository
 import com.example.projectm.data.models.GetAnalyticDataResposne
-import com.example.projectm.data.models.GetBuildingDataResponse
+import com.example.projectm.data.models.GetBuildingDataResponseItem
 import com.example.projectm.network.ApiService
 import dagger.hilt.android.scopes.ActivityScoped
 import kotlinx.coroutines.flow.Flow
@@ -16,7 +16,7 @@ class MainRepository @Inject constructor(
 ) : BaseRepository() {
 
     suspend fun fetchBuildings():
-            Flow<Resource<GetBuildingDataResponse>> =
+            Flow<Resource<List<GetBuildingDataResponseItem>>> =
         flow {
             val response = safeApiCall {
                 api.getBuildingData()
@@ -32,7 +32,7 @@ class MainRepository @Inject constructor(
         }
 
     suspend fun fetchAnalytics():
-            Flow<Resource<GetAnalyticDataResposne>> =
+            Flow<Resource<List<GetAnalyticDataResposne>>> =
         flow {
             val response = safeApiCall {
                 api.getAnalyticData()

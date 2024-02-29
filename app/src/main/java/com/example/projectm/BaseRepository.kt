@@ -1,7 +1,7 @@
 package com.example.projectm
 
 import android.util.Log
-import com.example.neko.utils.resource.Resource
+import com.example.projectm.utils.resource.Resource
 import com.google.gson.JsonSyntaxException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

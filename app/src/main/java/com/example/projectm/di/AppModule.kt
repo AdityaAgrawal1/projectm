@@ -17,17 +17,17 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
-    val logging = HttpLoggingInterceptor().apply {
+    private val logging = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
     }
 
-    val client = OkHttpClient.Builder()
+    private val client = OkHttpClient.Builder()
         .addInterceptor(logging)
         .build()
 
     @Singleton
     @Provides
-    fun provideCatApi(): ApiService {
+    fun provideApiService(): ApiService {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BASE_URL)

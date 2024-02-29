@@ -1,6 +1,4 @@
-package com.example.neko.utils.resource
-
-import okhttp3.ResponseBody
+package com.example.projectm.utils.resource
 
 sealed class Resource<out T> {
 
